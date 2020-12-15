@@ -1,0 +1,44 @@
+@import '../styles/utils/variable';
+
+body, html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Montserrat';
+}
+
+.bg-color {
+    background-color: $darkBlue;
+    min-height: 100vh;
+    color: $lightColor;
+    padding: 1rem 8rem;
+}
+
+.mainRow {
+    display: flex;
+
+    .showTable {
+        width: 50%;
+    }
+    .shows-full-area {
+        width: 100%;
+    }
+    .shows-area {
+        width: 50%;
+    }
+
+    .cardRow {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+        grid-gap: 1rem;
+    
+        .card {
+            cursor: pointer;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
