@@ -18,6 +18,7 @@ const TableShow: React.FC<TableShowProps> = ({tableShows, removeShowToTable}) =>
                 animate={{  x: 0 }}
                 exit={{  x: "200%"}}
                 transition={{ type: "tween", delay:0.2}}
+                className="mTable"
                 >
                     <thead>
                         <tr>

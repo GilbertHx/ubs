@@ -8,13 +8,14 @@
 
     table {
         border: none;
-        border-spacing: 0rem .1rem;
+        border-spacing: .1rem .2rem;
 
         & tr {
             color: #c1ac92;
             margin: .4rem 0;
             border: none;
             cursor: pointer;
+            transition: all ease-in-out .35s;
             
             & th {
                 border-top: none;
@@ -24,10 +25,11 @@
                 text-align: left;
                 padding: .8rem .4rem;
                 border: none;
+                font-size: $smallFontSize;
+                text-transform: uppercase;
             }
     
             & td {
-                // border-top: 1px solid $darkBlue;
                 border: none;
                 background: $blueHeader;
                 white-space: nowrap;
@@ -38,7 +40,8 @@
             &:hover {
                 & > td {
                     color: $greenColor;
-                    background-color: blueTransparent;
+                    background-color: $blueTransparent;
+                    transition: all ease-in-out .35s;
                 }
             }
         }    

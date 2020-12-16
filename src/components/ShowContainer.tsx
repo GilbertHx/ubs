@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { SHOWS } from '../../constants';
-import { AppState } from '../../reducers';
-import { ShowType } from '../../types/Shows';
-import Search from '../Search/SearchContainer';
-import ShowList from './ShowList';
-import TableShow from './TableShow';
-import '../../styles/main.scss';
+import { SHOWS } from '../constants';
+import { AppState } from '../reducers';
+import { ShowType } from '../types/Shows';
+import Search from './Search/SearchContainer';
+import ShowList from './Show/ShowList';
+import TableShow from './Table/TableShow';
+import '../styles/main.scss';
 import { AnimatePresence, motion } from 'framer-motion';
-import Loading from '../Loading/Loading';
+import Loading from './Loading/Loading';
 
 
 function ShowContainer() {

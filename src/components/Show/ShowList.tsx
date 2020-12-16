@@ -40,8 +40,9 @@ const ShowList: React.FC<ShowListProps> = ({shows, addShowToTable}) => {
                     custom={i}
                     key={show.show.id} 
                     className="card"
+                    onClick={() => addShowToTable(show)}
                 >
-                    <div onClick={() => addShowToTable(show)}>
+                    <div>
                         {
                             show.show.rating.average && <span className="average-txt" >{show.show.rating.average}</span>
                         }

@@ -19,13 +19,14 @@ const Search: FunctionComponent<Props> = props => {
     <motion.div
       initial={{y: -250}}
       animate={{y: 0}}
-      whileTap={{scale: .96, originX: 0 }}
+      whileTap={{scale: .98, originX: 0 }}
       transition={{ type: "spring", stiffness: 100 }}
         >
             <input
               className="searchInput"
               placeholder="Search..."
               aria-label="Search"
+              autoFocus
               value={query}
               id="search-input"
               onChange={handleChange}
