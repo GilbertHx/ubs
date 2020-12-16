@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { SHOWS } from '../constants';
 import { AppState } from '../reducers';
@@ -7,7 +7,7 @@ import Search from './Search/SearchContainer';
 import ShowList from './Show/ShowList';
 import TableShow from './Table/TableShow';
 import '../styles/main.scss';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Loading from './Loading/Loading';
 
 

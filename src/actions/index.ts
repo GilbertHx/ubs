@@ -1,5 +1,5 @@
 import { SHOWS } from '../constants';
-import { AppActions, GetShowsRequestAction } from '../types/actions';
+import { AppActions } from '../types/actions';
 import { ShowType } from '../types/Shows';
 
 const loadShows = (query: string = ""): AppActions => ({

@@ -48,8 +48,8 @@ const ShowList: React.FC<ShowListProps> = ({shows, addShowToTable}) => {
                         }
                     
                         {show.show.image && show.show.image.medium ? 
-                            <img className="show-cover-img" src={show.show.image.medium} />  :
-                            <img className="show-cover-img" src={noImage} />
+                            <img className="show-cover-img" src={show.show.image.medium} alt={show.show.image.medium} />  :
+                            <img className="show-cover-img" src={noImage} alt={noImage}/>
                         }
                         <div className="card-body">
                             <p className="card-title">{show.show.name}</p>
