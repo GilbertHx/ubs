@@ -1,8 +1,6 @@
 # Gilbert Habimana's Task from UBS
 
-## Available Scripts
-
-Here is the instructions on how to run:
+## Here is the instructions on how to run:
 
 ### `yarn install`
 
@@ -16,4 +14,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### `yarn cypress`
 
-Launches the test runner in the interactive watch mode.
+After a moment, the Cypress Test Runner will launch.
