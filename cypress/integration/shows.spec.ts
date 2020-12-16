@@ -1,3 +1,5 @@
+/// <reference types="cypress" />
+
 describe('TV Show list', () => {
     beforeEach(() => {
         cy.visit('/')
