@@ -1,0 +1,28 @@
+@mixin cardRow($min) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax($min, 1fr));
+    grid-gap: 1rem;
+
+    .card {
+        cursor: pointer;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+@mixin mQ($arg...) {
+    @if length($arg) == 1 {
+        @media  screen and (max-width: nth($arg, 1)) {
+            @content;
+        }
+    }
+
+    @if length($arg) == 2 {
+        @media  screen and (max-width: nth($arg, 1)) and (min-width: nth($arg, 2)) {
+            @content;
+        }
+    }
+
+    
+}

@@ -1,42 +1,63 @@
 @import '../styles/utils/variable';
+@import '../styles/utils/mixins';
 
 body, html {
     height: 100%;
 }
 
 body {
-    font-family: 'Montserrat';
+    font-family: 'Andika New Basic', sans-serif;
 }
 
-.bg-color {
+.content {
     background-color: $darkBlue;
     min-height: 100vh;
     color: $lightColor;
-    padding: 1rem 8rem;
+    padding: 0 $contentSidePadding;
+
+    @include mQ(767.98px) {
+        padding: 1rem $contentSidePaddingSmall;
+    }
+}
+
+.error {
+    color: $redColor;
+    font-size: $bigFontSize;
 }
 
 .mainRow {
     display: flex;
+    @include mQ(767.98px) {
+        display: block;
+    }
 
     .showTable {
         width: 50%;
+        overflow-x: scroll;
+        @include mQ(767.98px) {
+            width: 100%;
+        }
     }
     .shows-full-area {
         width: 100%;
+        .cardRow {
+            padding-left: 0rem;
+            @include cardRow(14rem);
+            @include mQ(767.98px) {
+                width: 100%;
+            }
+        }
     }
     .shows-area {
         width: 50%;
-    }
-
-    .cardRow {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
-        grid-gap: 1rem;
-    
-        .card {
-            cursor: pointer;
-            img {
-                width: 100%;
+        @include mQ(767.98px) {
+            width: 100%;
+        }
+        .cardRow {
+            padding-left: .8rem;
+            @include cardRow(9rem);
+            @include mQ(767.98px) {
+                padding-left: 0rem;
             }
         }
     }

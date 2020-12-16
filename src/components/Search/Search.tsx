@@ -1,5 +1,6 @@
 import React, { FunctionComponent, useState } from "react";
 import { motion } from 'framer-motion';
+import './Search.scss';
 
 interface Props {
   onSearch(query: string): void;
@@ -18,9 +19,9 @@ const Search: FunctionComponent<Props> = props => {
     <motion.div
       initial={{y: -250}}
       animate={{y: 0}}
+      whileTap={{scale: .96, originX: 0 }}
+      transition={{ type: "spring", stiffness: 100 }}
         >
-        <div> 
-          {/* <inputgr className="mb-3"> */}
             <input
               className="searchInput"
               placeholder="Search..."
@@ -29,8 +30,6 @@ const Search: FunctionComponent<Props> = props => {
               id="search-input"
               onChange={handleChange}
             />
-          {/* </InputGroup> */}
-      </div> 
     </motion.div>
   );
 };

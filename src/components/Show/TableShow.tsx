@@ -11,13 +11,14 @@ interface TableShowProps {
 
 const TableShow: React.FC<TableShowProps> = ({tableShows, removeShowToTable}) => {
   return (
-        <>
+        <div className="showTable">
             { tableShows.length === 0 ? null : 
                 <motion.table 
-                initial={{ width: 0 }}
-                animate={{ width: "50%" }}
-                exit={{ width: 0 }}
-                className="showTable">
+                initial={{ x: "-200%" }}
+                animate={{  x: 0 }}
+                exit={{  x: "200%"}}
+                transition={{ type: "tween", delay:0.2}}
+                >
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -31,11 +32,10 @@ const TableShow: React.FC<TableShowProps> = ({tableShows, removeShowToTable}) =>
                     <tbody>
                     {
                         tableShows.map(show => (
-                            <AnimatePresence key={show.show.id} >
+                            <AnimatePresence key={show.show.id}>
                                 <motion.tr
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    exit={{ opacity: 0 }}
+                                    initial={{ opacity: 0, y:-50 }}
+                                    animate={{ opacity: 1, y: 0 }}
                                     onClick={() => removeShowToTable(show)}>
                                     <td>{show.show.name && show.show.name}</td>
                                     <td>{show.show.type}</td>
@@ -56,7 +56,7 @@ const TableShow: React.FC<TableShowProps> = ({tableShows, removeShowToTable}) =>
                     </tbody>
                 </motion.table>
             }
-        </>
+        </div>
     );
 };
 

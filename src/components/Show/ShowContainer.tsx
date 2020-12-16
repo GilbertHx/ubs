@@ -3,12 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { SHOWS } from '../../constants';
 import { AppState } from '../../reducers';
 import { ShowType } from '../../types/Shows';
-import './Show.scss';
 import Search from '../Search/SearchContainer';
 import ShowList from './ShowList';
 import TableShow from './TableShow';
 import '../../styles/main.scss';
 import { AnimatePresence, motion } from 'framer-motion';
+import Loading from '../Loading/Loading';
 
 
 function ShowContainer() {
@@ -30,37 +30,34 @@ function ShowContainer() {
     }
 
     return (
-        <div>
-        <Search />
-        {
-            isLoading ? <div>isLoading</div>:
-            <div className="mainRow">
-                
-                {
-                    tableShows.length === 0 ? 
-                    <div className="shows-full-area">
-                        <ShowList shows={shows} addShowToTable={addShowToTable}/>
-                    </div>
-                    : 
-                    <>
-                        <motion.div className="shows-area"
-                        initial={{ width: "100%" }}
-                        animate={{ width: "50%" }}
-                        exit={{ width: "50%" }}>
+        <>
+            <Search />
+            {error && <div className="error">Oh no, an error occured!</div>}
+            {
+                isLoading ? <Loading /> :
+                <div className="mainRow">
+                    {
+                        tableShows.length === 0 ? 
+                        <div className="shows-full-area">
                             <ShowList shows={shows} addShowToTable={addShowToTable}/>
-                        </motion.div>
-                        <AnimatePresence>
+                        </div>
+                        : 
+                        <>
                             <TableShow tableShows={tableShows} removeShowToTable={removeShowToTable}/>
-                        </AnimatePresence>
-                    </>
-                    
-                }
-                    
-                {/* {error && <div className="error">{JSON.stringify(error)}</div>} */}
-            </div>
-        }
+                            <motion.div className="shows-area"
+                                initial={{ x: 50 }}
+                                animate={{ x: 0 }}
+                                exit={{ x: 50 }}
+                                transition={{ type: "tween"}}
+                            >
+                                <ShowList shows={shows} addShowToTable={addShowToTable}/>
+                            </motion.div>
+                        </>
+                    }
+                </div>
+            }
             
-        </div>
+        </>
     );
 }
 

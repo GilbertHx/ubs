@@ -1,28 +1,48 @@
-// .table {
-//     & tr {
-//         padding: 1.8rem 0;
-//         color: #c1ac92;
-        
-//         & th {
-//             border-top: none;
-//             background: #12182b8f;
-//             white-space: nowrap;
-//             color: #FFFFFF;
-//         }
+@import '../../styles/main.scss';
 
-//         & td {
-//             border-top: 1px solid #1e2c4a;
-//             background: #12182b;
-//             white-space: nowrap;
-//         }
+.showTable {
+    padding-right: .8rem;
+    @include mQ(767.98px) {
+        padding: 0;
+    }
 
-//         &:hover {
-//             & > td {
-//                 color: #2e8b57;
-//                 background: #12182b8f;
-//             }
-//         }
-//     }
+    table {
+        border: none;
+        border-spacing: 0rem .1rem;
+
+        & tr {
+            color: #c1ac92;
+            margin: .4rem 0;
+            border: none;
+            cursor: pointer;
+            
+            & th {
+                border-top: none;
+                background: $blueTransparent;
+                white-space: nowrap;
+                color: $whiteColor;
+                text-align: left;
+                padding: .8rem .4rem;
+                border: none;
+            }
+    
+            & td {
+                // border-top: 1px solid $darkBlue;
+                border: none;
+                background: $blueHeader;
+                white-space: nowrap;
+                text-align: left;
+                padding: .8rem .4rem;
+            }
+    
+            &:hover {
+                & > td {
+                    color: $greenColor;
+                    background-color: blueTransparent;
+                }
+            }
+        }    
+    }
 
     
-// }
+}
