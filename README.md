@@ -14,4 +14,5 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### `yarn cypress`
 
-After a moment, the Cypress Test Runner will launch.
+After a moment, the Cypress test runner will launch.
+The application must be running.
