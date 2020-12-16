@@ -10,7 +10,7 @@ const Loading: React.FC = () => {
             animate={{
               scale: [1, 1.5, 1.5, 1, 1],
               rotate: [0, 180, 180, 360, 360],
-              borderRadius: ["20%", "20%", "50%", "50%", "20%"]
+              borderRadius: ["50%", "35%", "20%", "35%", "50%"]
             }}
             >
               <motion.span 
