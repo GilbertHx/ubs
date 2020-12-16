@@ -22,7 +22,6 @@ describe('Search Input form', () => {
             cy.get('.searchInput').type(query) 
             cy.get('.card')
             .should('have.length', 10)
-            .and('contain', 'Girl')
         })
     })
 })
